@@ -26,7 +26,7 @@ public:
     string get_utilidad(); //Obtener utilidad de la maquina
 
     void set_idoperador(operario &); //Establecer id de operador, recibe directamente un operador para asegurar que este existe dentro del sistema
-    string set_idoperador(); //Obtener id de operador.
+    string get_idoperador(); //Obtener id de operador.
 
     void set_nombre_equipo(equipo_mantenimiento &); //Establecer nombre del equipo de mantenimiento asignado, recibe directamente un equipo de mantenimiento para asegurar que este existen en el sistema
     string get_nombre_equipo(); //Obtener nombre del equipo de mantenimiento asignado
