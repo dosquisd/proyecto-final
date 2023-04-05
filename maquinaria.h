@@ -1,7 +1,6 @@
 #ifndef MAQUINARIA_H
 #define MAQUINARIA_H
 
-#include <iostream>
 #include "equipo_mantenimiento.h"
 #include "fecha.h"
 using namespace std;
