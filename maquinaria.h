@@ -7,13 +7,12 @@
 using namespace std;
 
 class maquinaria {
-
     friend ostream &operator << (ostream &, const maquinaria &);
     friend istream &operator >> (istream &, maquinaria &);
 
 public:
     //métodos generales
-    maquinaria(); //constructor
+    maquinaria(string); //constructor
     maquinaria(const maquinaria &); //Constructor de copia
     virtual ~maquinaria(); //Destructor
 

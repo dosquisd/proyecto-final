@@ -1,6 +1,8 @@
 #include "maquinaria.h"
 
-maquinaria::maquinaria() = default;
+maquinaria::maquinaria(string uti) {
+    utilidad = uti;
+}
 
 maquinaria::maquinaria(const maquinaria &copia) {
     placa = copia.placa;
