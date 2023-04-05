@@ -1,0 +1,8 @@
+# ninja log v5
+23	1971	7023706917806227	build.ninja	a503f49a72ba4d5c
+41	1922	7023706940482905	CMakeFiles/Proyecto_final.dir/equipo_mantenimiento.cpp.obj	76bfd6386f177cfd
+1	2017	7023706941807287	CMakeFiles/Proyecto_final.dir/fecha.cpp.obj	395290c69fc72f18
+16	2944	7023706951033108	CMakeFiles/Proyecto_final.dir/empresa.cpp.obj	b7d2f9b124cab4fe
+2018	4168	7023706963211022	CMakeFiles/Proyecto_final.dir/main.cpp.obj	30368f1d0f53ca8e
+1928	4328	7023706963959806	CMakeFiles/Proyecto_final.dir/maquinaria.cpp.obj	c3a50c547a9372bc
+2944	5210	7023706973625860	CMakeFiles/Proyecto_final.dir/operario.cpp.obj	157d5d0d7fd51b70

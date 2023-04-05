@@ -1,8 +1,6 @@
 #include "maquinaria.h"
 
-maquinaria::maquinaria(string uti) {
-    utilidad = uti;
-}
+maquinaria::maquinaria() = default;
 
 maquinaria::maquinaria(const maquinaria &copia) {
     placa = copia.placa;
@@ -42,4 +40,39 @@ void maquinaria::set_nombre_equipo(equipo_mantenimiento &a) {
 
 string maquinaria::get_nombre_equipo() {
     return nombre_equipo;
+}
+
+ostream &operator<<(ostream &out, const maquinaria& a) {
+    out << "Nombre del equipo: " << a.nombre_equipo << endl;
+    out << "ID del operador: " << a.id_operador << endl;
+
+    out << "\nDatos acerca de la maquinaria:\n";
+    out << "Placa: " << a.placa << endl;
+    out << "Utilidad: " << a.utilidad << endl;
+    out << "Estado: " << a.estado << endl;
+    out << "Última fecha de mantenimiento: " << a.ult_mantenimiento << endl;
+    out << "Próxima fecha de mantenimiento: " << a.prox_mantenimiento << endl;
+
+    return out;
+}
+
+istream &operator>>(istream &in, maquinaria& a) {
+    cout << "Nombre del equipo: ";
+    getline(in, a.nombre_equipo);
+    cout << "ID del operador: ";
+    getline(in, a.id_operador);
+
+    cout << "Placa de la maquinaria: ";
+    getline(in, a.placa);
+    cout << "Utilidad de la maquinaria: ";
+    getline(in, a.utilidad);
+    cout << "Estado de la maquinaria: ";
+    getline(in, a.estado);
+
+    cout << "Última fecha de mantinimiento: ";
+    in >> a.ult_mantenimiento;
+    cout << "Próxima fecha de mantenimiento: ";
+    in >> a.prox_mantenimiento;
+
+    return in;
 }
