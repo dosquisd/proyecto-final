@@ -1,6 +1,12 @@
 #include "maquinaria.h"
 
-maquinaria::maquinaria() = default;
+maquinaria::maquinaria(string uti) {
+    placa = "";
+    utilidad = uti;
+    estado = "";
+    id_operador = "";
+    nombre_equipo = "";
+}
 
 maquinaria::maquinaria(const maquinaria &copia) {
     placa = copia.placa;
@@ -74,5 +80,6 @@ istream &operator>>(istream &in, maquinaria& a) {
     cout << "Próxima fecha de mantenimiento: ";
     in >> a.prox_mantenimiento;
 
+    fflush(stdin);
     return in;
 }

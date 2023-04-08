@@ -1,7 +1,8 @@
 #include "empresa.h"
 
 int main() {
-    cout << "Hello, World!" << endl;
-
-    return 0;
+    equipo_mantenimiento equipo(3);
+    equipo.set_operarios();
+    cout << equipo;
 }
+

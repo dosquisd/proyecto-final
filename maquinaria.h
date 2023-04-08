@@ -11,7 +11,7 @@ class maquinaria {
 
 public:
     //métodos generales
-    maquinaria(); //constructor
+    maquinaria(string = ""); //constructor
     maquinaria(const maquinaria &); //Constructor de copia
     virtual ~maquinaria(); //Destructor
 

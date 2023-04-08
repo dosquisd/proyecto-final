@@ -86,23 +86,17 @@ ostream &operator<<(ostream &salida, const fecha &d)
     return salida;
 }
 
-istream &operator>>(istream &entrada, fecha &d)
-{
-    char res = 's';
-    do{
-        cout << "\nDía = ";
-        entrada >> d.dia;
+istream &operator>>(istream &entrada, fecha &d) {
+    cout << "Día = ";
+    entrada >> d.dia;
 
-        cout << "\nMes = ";
-        entrada >> d.mes;
+    cout << "Mes = ";
+    entrada >> d.mes;
 
-        cout << "\nAño = ";
-        entrada >> d.anio;
+    cout << "Año = ";
+    entrada >> d.anio;
 
-        d.estableceFecha(d.mes,d.dia,d.anio);
-        cout << "\nLa fecha es = " << d;
-        cout << "\n¿De acuerdo? (s/n) ";
-        cin >> res;
-    } while(res != 's');
+    d.estableceFecha(d.mes,d.dia,d.anio);
+
     return entrada;
 }

@@ -5,7 +5,7 @@
 
 class empresa {
 public:
-    empresa(int, int, int); // Si acaso luego se les puede poner parametros por defecto
+    empresa(int = 2, int = 2, int = 2); // Si acaso luego se les puede poner parametros por defecto
     empresa(const empresa &);
     virtual ~empresa();
 

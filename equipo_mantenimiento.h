@@ -14,7 +14,7 @@ public:
     virtual ~equipo_mantenimiento(); //Destructor
 
     //Métodos específicos
-    void setoperarios(); //Guardar operarios
+    void set_operarios(); //Guardar operarios
 
     string get_nombre() const; //Recibir nombre del equipo
     void set_nombre_equipo(string); // Guardar nombre del equipo
@@ -26,7 +26,6 @@ public:
 
     //Sobrecargas
     operario operator [] (int) const; //Sobrecarga de corchetes para simplificar el código
-
 
 protected:
     vector <operario> equipo;

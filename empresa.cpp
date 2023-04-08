@@ -1,9 +1,9 @@
 #include "empresa.h"
 
 empresa::empresa(int n_op, int n_equipos, int n_maquinas) {
-    cant_operadores = n_op;
-    cant_equipos = n_equipos;
-    cant_maquinarias = n_maquinas;
+    cant_operadores = (n_op > 2) ? n_op : 2;
+    cant_equipos = (n_equipos > 2) ? n_equipos : 2;
+    cant_maquinarias = (n_maquinas > 2) ? n_maquinas : 2;
 
     // Cambiar el tamaño de los vectores al nuevo ingresado
     operadores.resize(n_op);
