@@ -6,8 +6,8 @@
 using namespace std;
 
 class maquinaria {
-    friend ostream &operator << (ostream &, const maquinaria &);
-    friend istream &operator >> (istream &, maquinaria &);
+    friend ostream &operator<<(ostream &, const maquinaria &);
+    friend istream &operator>>(istream &, maquinaria &);
 
 public:
     //métodos generales

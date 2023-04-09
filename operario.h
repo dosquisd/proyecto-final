@@ -7,8 +7,8 @@ using namespace std;
 
 class operario {
     //Sobrecarga de entrada y salida
-    friend ostream &operator << (ostream &, const operario &);
-    friend istream &operator >> (istream &, operario &);
+    friend ostream &operator<<(ostream &, const operario &);
+    friend istream &operator>>(istream &, operario &);
 public:
     //Métodos generales
     operario(); //Constructor
@@ -28,7 +28,7 @@ public:
     void set_utl_trabajo(fecha); //Establecer última fecha de trabajo
     fecha get_ult_trabajo(); //Recibir última fecha de trabajo
 
-    operario operator =(const operario &);
+    const operario &operator=(const operario &);
 protected:
     string nombre;
     string id;

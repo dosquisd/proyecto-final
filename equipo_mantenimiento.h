@@ -5,7 +5,7 @@
 #include <vector>
 
 class equipo_mantenimiento : public operario {
-    friend ostream &operator << (ostream &, const equipo_mantenimiento &); // Mostrar el vector de operarios
+    friend ostream &operator<<(ostream &, const equipo_mantenimiento &); // Mostrar el vector de operarios
 
 public:
     //Métodos generales
@@ -25,7 +25,7 @@ public:
     void actualizar_operario(); //Actualiza la información de un operario
 
     //Sobrecargas
-    operario operator [] (int) const; //Sobrecarga de corchetes para simplificar el código
+    operario &operator[](int) const; //Sobrecarga de corchetes para simplificar el código
 
 protected:
     vector <operario> equipo;
