@@ -33,3 +33,73 @@ empresa::~empresa() {
     equipos_de_mantenimiento.clear();
     maquinarias.clear();
 }
+
+const vector<operario> &empresa::get_operadores() const {
+    return operadores;
+}
+
+const vector<equipo_mantenimiento> &empresa::get_equipos() const {
+    return equipos_de_mantenimiento;
+}
+
+const vector<maquinaria> &empresa::get_maquinarias() const {
+    return maquinarias;
+}
+
+void empresa::set_operadores(const vector<operario>& a) {
+    operadores.resize(a.size());
+
+    copy(a.begin(), a.end(), operadores.begin());
+}
+
+void empresa::set_equipos(const vector<equipo_mantenimiento> & a) {
+    equipos_de_mantenimiento.resize(a.size());
+
+    copy(a.begin(), a.end(), equipos_de_mantenimiento.begin());
+}
+
+void empresa::set_maquinarias(const vector<maquinaria> & a) {
+    maquinarias.resize(a.size());
+
+    copy(a.begin(), a.end(), maquinarias.begin());
+}
+
+void empresa::agregar_operario() {
+    operario operador_temp;
+
+    cin >> operador_temp;
+
+    operadores.push_back(operador_temp);
+}
+
+void empresa::agregar_equipo() {
+    string nombre_equipo;
+    int n_integrantes;
+    operario operador_temp;
+    equipo_mantenimiento equipo_temp;
+
+    cout << "Nombre equipo: ";
+    getline(cin, nombre_equipo);
+
+    cout << "No. Integrantes: ";
+    cin >> n_integrantes;
+
+    for (int i = 0; i < n_integrantes; i++) {
+        cout << "Operario " << i + 1 << endl;
+
+        cin >> operador_temp;
+        equipo_temp.agregar_operario(operador_temp);
+
+        cout << endl;
+    }
+
+    equipos_de_mantenimiento.push_back(equipo_temp);
+}
+
+void empresa::agregar_maquinaria() {
+    maquinaria maquinaria_temp;
+
+    cin >> maquinaria_temp;
+
+    maquinarias.push_back(maquinaria_temp);
+}

@@ -6,8 +6,7 @@ fecha::fecha(int m, int d, int a) {
     estableceFecha(m, d, a);
 }
 
-fecha::fecha(const fecha &copia)
-{
+fecha::fecha(const fecha &copia) {
     dia = copia.dia;
     mes = copia.mes;
     anio = copia.anio;
@@ -15,8 +14,7 @@ fecha::fecha(const fecha &copia)
 
 fecha::~fecha() = default;
 
-void fecha::estableceFecha(int mm, int dd, int aa)
-{
+void fecha::estableceFecha(int mm, int dd, int aa) {
     mes = (mm >= 1 && mm <= 12)? mm : 1;
     anio = (aa >= 1900 && aa <= 2100)? aa : 1900;
 
@@ -26,45 +24,39 @@ void fecha::estableceFecha(int mm, int dd, int aa)
         dia = (dd >= 1 && dd <= dias[mes])? dd : 1;
 }
 
-fecha &fecha::operator++()
-{
+fecha &fecha::operator++() {
     ayudaIncremento();
     return *this;
 }
 
-fecha fecha::operator++(int)
-{
+fecha fecha::operator++(int) {
     fecha temp = *this;
     ayudaIncremento();
     return temp;
 }
 
-const fecha &fecha::operator+=(int diasAdicionales)
-{
+const fecha &fecha::operator+=(int diasAdicionales) {
     for(int i = 0; i < diasAdicionales; i++)
         ayudaIncremento();
 
     return *this;
 }
 
-bool fecha::anioBisiesto(int verificaAnio) const
-{
+bool fecha::anioBisiesto(int verificaAnio) const {
     if(verificaAnio % 400 == (verificaAnio % 100 != 0 && verificaAnio % 4 == 0))
         return true;
     else
         return false;
 }
 
-bool fecha::finDeMes(int verificaDia) const
-{
+bool fecha::finDeMes(int verificaDia) const {
     if(mes == 2 && anioBisiesto(anio))
         return verificaDia == 29;
     else
         return verificaDia == dias[mes];
 }
 
-void fecha::ayudaIncremento()
-{
+void fecha::ayudaIncremento() {
     if(!finDeMes(dia))
         ++dia;
     else
@@ -79,8 +71,7 @@ void fecha::ayudaIncremento()
     }
 }
 
-ostream &operator<<(ostream &salida, const fecha &d)
-{
+ostream &operator<<(ostream &salida, const fecha &d) {
     string nomM[13]={"","Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"};
     salida<<nomM[d.mes]<<" "<<d.dia<<", "<<d.anio;
     return salida;

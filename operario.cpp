@@ -31,6 +31,7 @@ string operario::get_id() { //Retornar id del operador
 void operario::set_maquina(string a) { //Establecer máquina del operador
     maquina = a;
 }
+
 string operario::get_maquina() { //Retornar maquina del operador
     return maquina;
 }
@@ -38,6 +39,7 @@ string operario::get_maquina() { //Retornar maquina del operador
 void operario::set_nombre(string a) { //Establecer nombre del operador
     nombre = a;
 }
+
 string operario::get_nombre() { //Retornar nombre del operador
     return nombre;
 }
@@ -45,13 +47,14 @@ string operario::get_nombre() { //Retornar nombre del operador
 void operario::set_utl_trabajo(fecha a) { //Establecer última fecha de trabajo
     ult_trabajo = a;
 }
+
 fecha operario::get_ult_trabajo() { //Retornar última fecha de trabajo
     return ult_trabajo;
 }
 
 //Sobrecargas de entrada y salida
 ostream &operator<<(ostream &out, const operario &a){
-    out << "Nombre: "<< a.nombre << endl;
+    out << "Nombre: " << a.nombre << endl;
     out << "ID: " << a.id << endl;
     out << "Placa de máquina encargada: " << a.maquina << endl;
     out << "Fecha de su último trabajo: " << a.ult_trabajo << endl;
@@ -61,14 +64,15 @@ ostream &operator<<(ostream &out, const operario &a){
 
 istream &operator>>(istream &in, operario &a){
     cout << "Por favor, ingrese el nombre del operador:  ";
-    in >>a.nombre;
+    getline(in, a.nombre);
     cout << "Por favor, ingrese el ID del operador:  ";
-    in >>a.id;
+    in >> a.id;
     cout << "Por favor, ingrese la placa de la máquina que opera:  ";
-    in >>a.maquina;
+    in >> a.maquina;
     cout << "Por favor, ingrese su última fecha de trabajo:\n";
     in >> a.ult_trabajo;
 
+    fflush(stdin);
     return in;
 }
 

@@ -16,7 +16,6 @@ public:
     virtual ~maquinaria(); //Destructor
 
     //Métodos específicos
-
     void set_placa(string); //Establecer placa de la maquina
     string get_placa(); //Establecer placa de la maquina
 

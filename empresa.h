@@ -9,6 +9,19 @@ public:
     empresa(const empresa &);
     virtual ~empresa();
 
+    const vector<operario> &get_operadores() const;
+    const vector<equipo_mantenimiento> &get_equipos() const;
+    const vector<maquinaria> &get_maquinarias() const;
+
+    void set_operadores(const vector<operario> &);
+    void set_equipos(const vector<equipo_mantenimiento> &);
+    void set_maquinarias(const vector<maquinaria> &);
+
+    // Se piden los datos dentro de los mismo metodos
+    void agregar_operario();
+    void agregar_equipo();
+    void agregar_maquinaria();
+
 private:
     vector <operario> operadores;
     int cant_operadores;

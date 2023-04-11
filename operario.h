@@ -1,14 +1,14 @@
 #ifndef OPERARIO_H
 #define OPERARIO_H
 
-#include <iostream>
 #include "fecha.h"
-using namespace std;
+// Se incluye la libreria iostream
 
 class operario {
     //Sobrecarga de entrada y salida
     friend ostream &operator<<(ostream &, const operario &);
     friend istream &operator>>(istream &, operario &);
+
 public:
     //Métodos generales
     operario(); //Constructor
@@ -29,12 +29,12 @@ public:
     fecha get_ult_trabajo(); //Recibir última fecha de trabajo
 
     const operario &operator=(const operario &);
+
 protected:
     string nombre;
     string id;
     fecha ult_trabajo;
     string maquina;
-
 };
 
 

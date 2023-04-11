@@ -24,6 +24,7 @@ public:
 
     void actualizar_operario(); //Actualiza la información de un operario
 
+    void agregar_operario(const operario&);
     //Sobrecargas
     operario &operator[](int) const; //Sobrecarga de corchetes para simplificar el código
 
@@ -31,7 +32,6 @@ protected:
     vector <operario> equipo;
     string nombre_equipo;
     int integrantes;
-
 };
 
 

@@ -54,11 +54,16 @@ void equipo_mantenimiento::actualizar_operario() {
     cin >> equipo[aux-1]; //Se solicita la entrada de los nuevos datos.
 }
 
+void equipo_mantenimiento::agregar_operario(const operario &a) {
+    equipo.push_back(a);
+}
+
 //sobrecarga de salida
 ostream &operator<<(ostream &out, const equipo_mantenimiento &a){
     for (int i = 0; i < a.equipo.size(); i++){
         out << " -------------- Integrante N°" << i+1 << " -------------- " << endl;
         out << a.equipo[i] << endl;
     }
+
     return out;
 }

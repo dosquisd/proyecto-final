@@ -18,7 +18,7 @@ maquinaria::maquinaria(const maquinaria &copia) {
     nombre_equipo = copia.nombre_equipo;
 }
 
-maquinaria::~maquinaria() = default;
+maquinaria::~maquinaria() {}
 
 void maquinaria::set_placa(string pl) {
     placa = pl;
@@ -66,18 +66,18 @@ istream &operator>>(istream &in, maquinaria& a) {
     cout << "Nombre del equipo: ";
     getline(in, a.nombre_equipo);
     cout << "ID del operador: ";
-    getline(in, a.id_operador);
+    in >> a.id_operador;
 
     cout << "Placa de la maquinaria: ";
-    getline(in, a.placa);
+    in >> a.placa;
     cout << "Utilidad de la maquinaria: ";
     getline(in, a.utilidad);
     cout << "Estado de la maquinaria: ";
-    getline(in, a.estado);
+    getline(in, a.estado); // Quizas se le pueda cambiar el getline para utilizar el >>
 
-    cout << "Última fecha de mantinimiento: ";
+    cout << "Última fecha de mantinimiento:\n";
     in >> a.ult_mantenimiento;
-    cout << "Próxima fecha de mantenimiento: ";
+    cout << "Próxima fecha de mantenimiento:\n";
     in >> a.prox_mantenimiento;
 
     fflush(stdin);
