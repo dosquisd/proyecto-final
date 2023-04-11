@@ -31,9 +31,9 @@ empresa a;
 int main() {
     // prueba_operarios();
 
-    // prueba_equipos();
+    prueba_equipos();
 
-    prueba_maquinarias();
+    // prueba_maquinarias();
 
     return 0;
 }
