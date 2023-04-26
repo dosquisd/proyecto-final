@@ -25,7 +25,7 @@ public:
     void set_maquina(string); //Establecer máquina que opera
     string get_maquina(); //Recibir máquina que opera
 
-    void set_utl_trabajo(fecha); //Establecer última fecha de trabajo
+    void set_ult_trabajo(fecha); //Establecer última fecha de trabajo
     fecha get_ult_trabajo(); //Recibir última fecha de trabajo
 
     const operario &operator=(const operario &);

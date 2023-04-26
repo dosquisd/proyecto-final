@@ -44,7 +44,7 @@ string operario::get_nombre() { //Retornar nombre del operador
     return nombre;
 }
 
-void operario::set_utl_trabajo(fecha a) { //Establecer última fecha de trabajo
+void operario::set_ult_trabajo(fecha a) { //Establecer última fecha de trabajo
     ult_trabajo = a;
 }
 
