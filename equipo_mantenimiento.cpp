@@ -16,7 +16,9 @@ equipo_mantenimiento::equipo_mantenimiento(const equipo_mantenimiento &copia) {/
     copy(copia.equipo.begin(), copia.equipo.end(), equipo.begin());
 }
 
-equipo_mantenimiento::~equipo_mantenimiento() {} //Destructor
+equipo_mantenimiento::~equipo_mantenimiento() {
+    equipo.clear();
+} //Destructor
 
 //métodos específicos
 void equipo_mantenimiento::set_operarios() { //Establecer operarios
@@ -66,4 +68,15 @@ ostream &operator<<(ostream &out, const equipo_mantenimiento &a){
     }
 
     return out;
+}
+
+istream &operator>>(istream &in, equipo_mantenimiento &a) {
+    // En caso de ser necesario, se puede guardar tambien el nombre del equipo o el numero de operarios (o ambos)
+    for(int i = 0; i < a.integrantes; i++) {
+        cout << "Integrante N°" << i+1 << endl;
+        in >> a.equipo[i];
+        cout << endl;
+    }
+
+    return in;
 }

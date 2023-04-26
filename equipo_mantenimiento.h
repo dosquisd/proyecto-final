@@ -6,6 +6,7 @@
 
 class equipo_mantenimiento : public operario {
     friend ostream &operator<<(ostream &, const equipo_mantenimiento &); // Mostrar el vector de operarios
+    friend istream &operator>>(istream &, equipo_mantenimiento &); // Guardar los datos en el vector operarios
 
 public:
     //Métodos generales
