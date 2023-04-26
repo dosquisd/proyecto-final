@@ -13,6 +13,10 @@ public:
     const vector<equipo_mantenimiento> &get_equipos() const;
     const vector<maquinaria> &get_maquinarias() const;
 
+    int get_n_operadores() const;
+    int get_n_equipos() const;
+    int get_n_maquinarias() const;
+
     void set_operadores(const vector<operario> &);
     void set_equipos(const vector<equipo_mantenimiento> &);
     void set_maquinarias(const vector<maquinaria> &);

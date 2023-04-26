@@ -46,20 +46,35 @@ const vector<maquinaria> &empresa::get_maquinarias() const {
     return maquinarias;
 }
 
+int empresa::get_n_operadores() const {
+    return cant_operadores;
+}
+
+int empresa::get_n_equipos() const {
+    return cant_equipos;
+}
+
+int empresa::get_n_maquinarias() const {
+    return cant_maquinarias;
+}
+
 void empresa::set_operadores(const vector<operario>& a) {
-    operadores.resize(a.size());
+    cant_operadores = a.size();
+    operadores.resize(cant_operadores);
 
     copy(a.begin(), a.end(), operadores.begin());
 }
 
-void empresa::set_equipos(const vector<equipo_mantenimiento> & a) {
-    equipos_de_mantenimiento.resize(a.size());
+void empresa::set_equipos(const vector<equipo_mantenimiento>& a) {
+    cant_equipos = a.size();
+    equipos_de_mantenimiento.resize(cant_equipos);
 
     copy(a.begin(), a.end(), equipos_de_mantenimiento.begin());
 }
 
-void empresa::set_maquinarias(const vector<maquinaria> & a) {
-    maquinarias.resize(a.size());
+void empresa::set_maquinarias(const vector<maquinaria>& a) {
+    cant_maquinarias = a.size();
+    maquinarias.resize(cant_maquinarias);
 
     copy(a.begin(), a.end(), maquinarias.begin());
 }
@@ -70,6 +85,7 @@ void empresa::agregar_operario() {
     cin >> operador_temp;
 
     operadores.push_back(operador_temp);
+    cant_operadores++;
 }
 
 void empresa::agregar_equipo() {
@@ -94,6 +110,7 @@ void empresa::agregar_equipo() {
     }
 
     equipos_de_mantenimiento.push_back(equipo_temp);
+    cant_equipos++;
 }
 
 void empresa::agregar_maquinaria() {
@@ -102,4 +119,5 @@ void empresa::agregar_maquinaria() {
     cin >> maquinaria_temp;
 
     maquinarias.push_back(maquinaria_temp);
+    cant_maquinarias++;
 }
