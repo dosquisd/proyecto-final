@@ -52,6 +52,49 @@ fecha operario::get_ult_trabajo() { //Retornar última fecha de trabajo
     return ult_trabajo;
 }
 
+void operario::editaroperador() {
+    int x = 0;
+    string aux;
+    fecha aux1;
+    do {
+        cout << "1- Nombre. " <<endl;
+        cout << "2- ID." << endl;
+        cout << "3. Última fecha de trabajo." << endl;
+        cin >> x;
+
+        fflush(stdin);
+        switch (x){
+            case 1:
+                cout << "Por favor, ingrese el nombre del operador: " << endl;
+                getline(cin, aux);
+                fflush(stdin);
+
+                nombre = aux;
+                x = 1;
+                break;
+
+            case 2:
+                cout << "Por favor, ingrese el ID del operador: " << endl;
+                cin >> aux;
+
+                id = aux;
+                x = 1;
+                break;
+
+            case 3:
+                cout << "Por favor, ingrese la última fecha de trabajo del operador: " << endl;
+                cin >> aux1;
+                ult_trabajo = aux1;
+                x = 1;
+                break;
+
+            default:
+                cout << "La opción elegida no coincide con ninguno de los datos posibles, inténtelo nuevamente" << endl;
+                x = 0;
+        }
+    } while (x == 0);
+}
+
 //Sobrecargas de entrada y salida
 ostream &operator<<(ostream &out, const operario &a){
     out << "Nombre: " << a.nombre << endl;

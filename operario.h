@@ -2,7 +2,6 @@
 #define OPERARIO_H
 
 #include "fecha.h"
-// Se incluye la libreria iostream
 
 class operario {
     //Sobrecarga de entrada y salida
@@ -27,6 +26,8 @@ public:
 
     void set_ult_trabajo(fecha); //Establecer última fecha de trabajo
     fecha get_ult_trabajo(); //Recibir última fecha de trabajo
+
+    void editaroperador();
 
     const operario &operator=(const operario &);
 
