@@ -8,6 +8,7 @@ using namespace std;
 class fecha {
     friend ostream &operator<<(ostream &, const fecha &);
     friend istream &operator>>(istream &, fecha &);
+    friend fecha& to_fecha(string); // Convertir una cadena dd/mm/aaaa, a un objeto fecha
 
 public:
     fecha(int m = 1, int d = 1, int y = 1900);
@@ -31,6 +32,8 @@ private:
     static const int dias[];
 
     void ayudaIncremento();
+
+
 };
 
 

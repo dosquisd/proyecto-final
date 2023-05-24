@@ -1,4 +1,5 @@
 #include "fecha.h"
+#include <sstream>
 
 const int fecha::dias[] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
@@ -90,4 +91,20 @@ istream &operator>>(istream &entrada, fecha &d) {
     d.estableceFecha(d.mes,d.dia,d.anio);
 
     return entrada;
+}
+
+fecha& to_fecha(string a) {
+    fecha *fecha_ptr = new fecha();
+    string fecha_info[3]; // fecha_info = {dia, mes, año}
+    stringstream ss(a);
+
+    getline(ss, fecha_info[0], '/');
+    getline(ss, fecha_info[1], '/');
+    getline(ss, fecha_info[2], '/');
+
+    fecha_ptr -> dia = atoi(fecha_info[0].c_str());
+    fecha_ptr -> mes = atoi(fecha_info[1].c_str());
+    fecha_ptr -> anio = atoi(fecha_info[2].c_str());
+
+    return *fecha_ptr;
 }
