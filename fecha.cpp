@@ -44,10 +44,10 @@ const fecha &fecha::operator+=(int diasAdicionales) {
 }
 
 const bool fecha::operator<(const fecha a) {
-    if (anio >= a.anio)
+    if (anio > a.anio)
         return false;
 
-     if (mes >= a.mes)
+     if (mes > a.mes)
         return false;
 
      if (dia >= a.dia)
@@ -57,6 +57,9 @@ const bool fecha::operator<(const fecha a) {
 }
 
 const bool fecha::operator>(const fecha a) {
+    if (a.dia == dia && a.mes == mes && a.anio == anio)
+        return false;
+
     return !(*this < a);
 }
 
