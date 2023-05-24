@@ -13,7 +13,7 @@ fecha::fecha(const fecha &copia) {
     anio = copia.anio;
 }
 
-fecha::~fecha() = default;
+fecha::~fecha() {}
 
 void fecha::estableceFecha(int mm, int dd, int aa) {
     mes = (mm >= 1 && mm <= 12)? mm : 1;
@@ -43,6 +43,23 @@ const fecha &fecha::operator+=(int diasAdicionales) {
     return *this;
 }
 
+const bool fecha::operator<(const fecha a) {
+    if (anio >= a.anio)
+        return false;
+
+     if (mes >= a.mes)
+        return false;
+
+     if (dia >= a.dia)
+        return false;
+
+    return true;
+}
+
+const bool fecha::operator>(const fecha a) {
+    return !(*this < a);
+}
+
 bool fecha::anioBisiesto(int verificaAnio) const {
     if(verificaAnio % 400 == (verificaAnio % 100 != 0 && verificaAnio % 4 == 0))
         return true;
@@ -70,6 +87,18 @@ void fecha::ayudaIncremento() {
         mes = 1;
         dia = 1;
     }
+}
+
+int fecha::get_dia() const {
+    return dia;
+}
+
+int fecha::get_mes() const {
+    return mes;
+}
+
+int fecha::get_anio() const {
+    return anio;
 }
 
 ostream &operator<<(ostream &salida, const fecha &d) {

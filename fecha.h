@@ -21,8 +21,15 @@ public:
     fecha operator++(int);
     const fecha &operator+=(int);
 
+    const bool operator <(const fecha);
+    const bool operator >(const fecha);
+
     bool anioBisiesto(int) const;
     bool finDeMes(int) const;
+
+    int get_dia() const;
+    int get_mes() const;
+    int get_anio() const;
 
 private:
     int mes;
@@ -32,8 +39,6 @@ private:
     static const int dias[];
 
     void ayudaIncremento();
-
-
 };
 
 
