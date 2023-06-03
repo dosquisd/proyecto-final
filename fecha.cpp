@@ -43,7 +43,7 @@ const fecha &fecha::operator+=(int diasAdicionales) {
     return *this;
 }
 
-const bool fecha::operator<(const fecha a) {
+const bool fecha::operator<(const fecha& a) {
     if (anio > a.anio)
         return false;
 
@@ -56,7 +56,7 @@ const bool fecha::operator<(const fecha a) {
     return true;
 }
 
-const bool fecha::operator>(const fecha a) {
+const bool fecha::operator>(const fecha& a) {
     if (a.dia == dia && a.mes == mes && a.anio == anio)
         return false;
 
@@ -64,10 +64,7 @@ const bool fecha::operator>(const fecha a) {
 }
 
 bool fecha::anioBisiesto(int verificaAnio) const {
-    if(verificaAnio % 400 == (verificaAnio % 100 != 0 && verificaAnio % 4 == 0))
-        return true;
-    else
-        return false;
+    return verificaAnio % 400 == (verificaAnio % 100 != 0 && verificaAnio % 4 == 0);
 }
 
 bool fecha::finDeMes(int verificaDia) const {

@@ -21,16 +21,15 @@ public:
     void set_nombre_equipo(string); // Guardar nombre del equipo
 
     void set_integrantes(int); //Guardar cantidad de integrantes
-    int get_integrantes() const; //Recibir integrantes
+    int get_integrantes() const; //Recibir cantidad de integrantes
 
     void actualizar_operario(); //Actualiza la información de un operario
+    void agregar_operario(const operario&); // Agrega un operario al final del vector
 
-    void agregar_operario(const operario&);
-    //Sobrecargas
-    operario &operator[](int) const; //Sobrecarga de corchetes para simplificar el código
+    vector <operario> equipo;
+    vector <operario> get_equipo();
 
 protected:
-    vector <operario> equipo;
     string nombre_equipo;
     int integrantes;
 };

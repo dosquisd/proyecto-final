@@ -12,7 +12,7 @@ equipo_mantenimiento::equipo_mantenimiento(const equipo_mantenimiento &copia) {/
     integrantes = copia.integrantes;
     nombre_equipo = copia.nombre_equipo;
 
-    equipo.resize(copia.equipo.size());
+    equipo.resize(integrantes);
     copy(copia.equipo.begin(), copia.equipo.end(), equipo.begin());
 }
 
@@ -22,7 +22,7 @@ equipo_mantenimiento::~equipo_mantenimiento() {
 
 //métodos específicos
 void equipo_mantenimiento::set_operarios() { //Establecer operarios
-    for (int i = 0; i < equipo.size(); i++){
+    for (int i = 0; i < integrantes; i++){
         cout << " -------------- Integrante N°" << i+1 << " -------------- " << endl;
         cin >> equipo[i];
     }
@@ -44,25 +44,30 @@ int equipo_mantenimiento::get_integrantes() const { //Retornar cantidad de integ
     return integrantes;
 }
 
+vector<operario> equipo_mantenimiento::get_equipo() {
+    return equipo;
+}
+
 void equipo_mantenimiento::actualizar_operario() {
     int aux = 0;
 
     do {
         cout << this;
-        cout << "Por favor, ingrese el número relacionado con el integrante que desea modificar ";
+        cout << "Por favor, ingrese el número relacionado con el integrante que desea modificar: ";
         cin >> aux;
-    } while (aux>integrantes || aux<1); //Ciclo condicionado para asegurar que el valor indicado está dentro del rango de integrantes
+    } while (aux > integrantes || aux < 1); //Ciclo condicionado para asegurar que el valor indicado está dentro del rango de integrantes
 
     cin >> equipo[aux-1]; //Se solicita la entrada de los nuevos datos.
 }
 
 void equipo_mantenimiento::agregar_operario(const operario &a) {
     equipo.push_back(a);
+    integrantes++;
 }
 
 //sobrecarga de salida
 ostream &operator<<(ostream &out, const equipo_mantenimiento &a){
-    for (int i = 0; i < a.equipo.size(); i++){
+    for (int i = 0; i < a.integrantes; i++){
         out << " -------------- Integrante N°" << i+1 << " -------------- " << endl;
         out << a.equipo[i] << endl;
     }
@@ -71,8 +76,11 @@ ostream &operator<<(ostream &out, const equipo_mantenimiento &a){
 }
 
 istream &operator>>(istream &in, equipo_mantenimiento &a) {
-    // En caso de ser necesario, se puede guardar tambien el nombre del equipo o el numero de operarios (o ambos)
+    cout << "Por favor, ingrese el nombre del equipo " << endl;
+    getline (in, a.nombre_equipo);
+
     for(int i = 0; i < a.integrantes; i++) {
+        fflush(stdin);
         cout << "Integrante N°" << i+1 << endl;
         in >> a.equipo[i];
         cout << endl;

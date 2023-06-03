@@ -21,8 +21,8 @@ public:
     fecha operator++(int);
     const fecha &operator+=(int);
 
-    const bool operator <(const fecha);
-    const bool operator >(const fecha);
+    const bool operator<(const fecha &);
+    const bool operator>(const fecha &);
 
     bool anioBisiesto(int) const;
     bool finDeMes(int) const;
