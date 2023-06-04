@@ -66,7 +66,7 @@ void maquinaria::set_estado() {
         cout << "1 - Óptimo." << endl;
         cout << "2 - Medio." << endl;
         cout << "3 - Dañado." << endl;
-        cout << "Por favor, ingrese el número relacionado con el estado de la máquina" << endl;
+        cout << "Por favor, ingrese el número relacionado con el estado de la máquina: ";
         cin >> x;
         switch (x) {
             case 1:

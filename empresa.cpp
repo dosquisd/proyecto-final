@@ -65,6 +65,7 @@ int empresa::get_n_maquinarias() const {
 }
 
 void empresa::set_operadores(int a) {
+    fflush(stdin);
     cant_operadores = a;
     operadores.resize(a);
     for(int i = 0; i < a; i++) {
@@ -114,7 +115,7 @@ void empresa::imprimirnumerado_maquinarias_disponibles() {
     cout << "------------ Maquinarias disponibles ------------" << endl;
     for (int i = 0; i < cant_maquinarias; i++){
         if (maquinarias[i].get_idoperador() == "0000") // Si no hay operarios asignados
-            cout << i+1 << "Placa: " <<maquinarias[i].get_placa() << " \t " << "Utilidad: " << maquinarias[i].get_utilidad() << endl;
+            cout << i+1 << ". Placa: " <<maquinarias[i].get_placa() << " \t " << "Utilidad: " << maquinarias[i].get_utilidad() << endl;
     }
 }
 

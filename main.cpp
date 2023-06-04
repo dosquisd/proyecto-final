@@ -32,20 +32,20 @@ int main() {
         fflush(stdin);
         getline(cin, aux);
         fflush(stdin);
-        cout << "Por favor, ingrese la cantidad de operadores que tiene su empresa: " << endl;
+        cout << "Por favor, ingrese la cantidad de operadores que tiene su empresa: ";
         solicitarpositivo(aux1);
-        cout << "Por favor, ingrese la cantidad de equipos de mantenimiento que tiene su empresa: " << endl;
+        cout << "Por favor, ingrese la cantidad de equipos de mantenimiento que tiene su empresa: ";
         solicitarpositivo(aux2);
         do {
             if (vigia1 == 1){
                 cout << "La cantidad ingresada es incorrecta, el número de maquinarias debe ser igual o superior a la cantidad de operadores" << endl;
             }
-            cout << "Por favor, ingrese la cantidad de maquinarias que tiene su empresa: " << endl;
+            cout << "Por favor, ingrese la cantidad de maquinarias que tiene su empresa: ";
             solicitarpositivo(aux3);
             vigia1 = 1;
-        }while (aux3<aux1);
+        }while (aux3 < aux1);
         vigia1 = 0;
-        cout << "Por favor, ingrese la cantidad de utilidades que tiene su empresa: " << endl;
+        cout << "Por favor, ingrese la cantidad de utilidades que tiene su empresa: ";
         solicitarpositivo(aux4);
         empresa empresa1 (aux1, aux2, aux3, aux4);
 
@@ -103,13 +103,13 @@ void menu_edición_datos(empresa &a){
                     cout << "1 - editar datos de un operario existente. " << endl;
                     cout << "2 - añadir un operario" << endl;
                     cin>> opcion;
-                } while (opcion != 1 and opcion != 2);
+                } while (opcion != 1 && opcion != 2);
                 if (opcion == 1){
                     a.imprimirnumerado_operarios();
                     do{
                         cout << "Por favor, ingrese el número relacionado con el operario que desea modificar";
                         cin >> opcion;
-                    } while (opcion<=0 or opcion>a.get_n_operadores());
+                    } while (opcion <= 0 || opcion > a.get_n_operadores());
                     a.editar_operador(opcion-1);
                     opcion=0;
                 }
@@ -124,13 +124,13 @@ void menu_edición_datos(empresa &a){
                     cout << "1 - editar datos de una maquinaria existente. " << endl;
                     cout << "2 - añadir una máquina" << endl;
                     cin >> opcion;
-                }while (opcion != 1 and opcion != 2);
+                }while (opcion != 1 && opcion != 2);
                 if (opcion == 1){
                     a.imprimirnumerado_maquinarias();
                     do{
                         cout << "Por favor, ingrese el número relacionado con la máquina que desea modificar ";
                         cin >> opcion;
-                    } while (opcion<=0 or opcion>a.get_n_maquinarias());
+                    } while (opcion <= 0 || opcion > a.get_n_maquinarias());
                     a.editar_maquinaria(opcion-1);
                     opcion = 0;
                 }
@@ -146,13 +146,13 @@ void menu_edición_datos(empresa &a){
                     cout << "1 - editar datos de un equipo existente. " << endl;
                     cout << "2 - añadir un equipo" << endl;
                     cin >> opcion;
-                }while (opcion != 1 and opcion != 2);
+                }while (opcion != 1 && opcion != 2);
                 if (opcion == 1){
                     a.imprimirnumerado_nombres_equipos();
                     do{
                         cout << "Por favor, ingrese el número relacionado con el equipo que desea editar" << endl;
                         cin>>opcion;
-                    } while (opcion <= 0 or opcion > a.get_n_equipos());
+                    } while (opcion <= 0 || opcion > a.get_n_equipos());
                     a.editar_equipo(opcion-1);
                     opcion = 0;
                 }

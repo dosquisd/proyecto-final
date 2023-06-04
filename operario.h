@@ -32,10 +32,10 @@ public:
     const operario &operator=(const operario &);
 
 protected:
-    string nombre; // Puede ser más de una palabra
-    string id; // Una palabra
+    string nombre;
+    string id;
     fecha ult_trabajo;
-    string maquina; // Es la placa de la maquina, una palabra
+    string maquina;
 };
 
 

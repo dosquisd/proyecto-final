@@ -76,7 +76,7 @@ ostream &operator<<(ostream &out, const equipo_mantenimiento &a){
 }
 
 istream &operator>>(istream &in, equipo_mantenimiento &a) {
-    cout << "Por favor, ingrese el nombre del equipo " << endl;
+    cout << "Por favor, ingrese el nombre del equipo ";
     getline (in, a.nombre_equipo);
 
     for(int i = 0; i < a.integrantes; i++) {

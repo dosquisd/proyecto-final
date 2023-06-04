@@ -34,3 +34,9 @@
 3514	4488	7075161868225909	CMakeFiles/Proyecto_final.dir/fecha.cpp.obj	395290c69fc72f18
 17	1039	7075162536633365	CMakeFiles/Proyecto_final.dir/maquinaria.cpp.obj	c3a50c547a9372bc
 1040	1461	7075162540717422	Proyecto_final.exe	34acf15c31c026bd
+19	13161	7076047419810847	CMakeFiles/Proyecto_final.dir/main.cpp.obj	30368f1d0f53ca8e
+75	15756	7076047444769626	CMakeFiles/Proyecto_final.dir/equipo_mantenimiento.cpp.obj	76bfd6386f177cfd
+13164	20877	7076047497669535	CMakeFiles/Proyecto_final.dir/maquinaria.cpp.obj	c3a50c547a9372bc
+111	20964	7076047497784873	CMakeFiles/Proyecto_final.dir/empresa.cpp.obj	b7d2f9b124cab4fe
+15756	21788	7076047507136264	CMakeFiles/Proyecto_final.dir/operario.cpp.obj	157d5d0d7fd51b70
+21789	23149	7076047520928484	Proyecto_final.exe	34acf15c31c026bd
