@@ -1,15 +1,10 @@
-<figure>
-    <img src="Archivos/utb.jpg" alt="Imagen a la izquierda" style="width: 220px; height: 110px; float: left; margin-right: 10px;">
-    <figcaption style="text-align: right; font-family: 'Carlito'">
-        <p style="font-size: 26px">Facultad de Ingeniería</p>
-        <p style="line-height: 1px; font-size: 16px;">Curso: Programación Orientada a Objetos</p>
-        <p style="line-height: 1px; font-size: 16px;">Caso de estudio - Taller</p>
-        <p style="line-height: 1px; font-size: 16px;">Diederik Antonio Montaño Burbano –T00068226</p>
-        <p style="line-height: 1px; font-size: 16px;">Juan Diego Pérez Navarro –T00067699</p>
-    </figcaption>
-</figure>
+**Facultad de ingeniería**
+Curso: Programación Orientada a Objetos
+Caso estudio - Taller
+Diederik Antonio Montaño Burbano – T00068226
+Juan Diego Pérez Navarro – T00067699
 
-## CASO EMPRESA
+# CASO EMPRESA
 
 UTILIZANDO HERENCIA, CLASES, POLIMORFISMO, ARCHIVOS Y SOBRECARGA DE OPERADORES
 
@@ -31,7 +26,7 @@ Hay información en específico a la que se debe poder acceder con gran facilida
 
 ---
 
-### Clase base operario
+## Clase base operario
 
 Para la solución de este caso, se planteó como clase fundamental a “operario”, que contiene todos los elementos generales necesarios para el desarrollo del programa. Sus atributos son:
 
@@ -56,7 +51,7 @@ Respectivamente, sobrecargas de los operadores de salida y entrada de datos, par
 
 ---
 
-### Clase derivada equipo de mantenimiento
+## Clase derivada equipo de mantenimiento
 
 Los equipos de mantenimiento son un derivado de la **clase operador**, que hereda sus métodos y atributos, aunque no haga uso de estos últimos. Cuenta con nuevos atributos tales como:
 
@@ -77,7 +72,7 @@ friend istream &operator >> (istream &, equipo_mantenimiento &);
 
 ---
 
-### Clase maquinaria
+## Clase maquinaria
 
 La clase maquinaria cuenta con los datos que deben almacenar todas las maquinarias, y es independiente al resto de clases, por lo que no hereda métodos ni atributos. Está formada por:
 
@@ -103,7 +98,7 @@ friend istream &operator >> (istream &, maquinaria &);
 
 ---
 
-### Clase derivada empresa
+## Clase derivada empresa
 
 La clase empresa es, a grandes rasgos, una clase contenedora para todas las clases creadas anteriormente. Hereda los **atributos** y **métodos** de las clases **maquinaria**, **operario** y **equipo de mantenimiento**, sin embargo, los atributos no son utilizados y la herencia se encuentra enfocada en los métodos.
 
