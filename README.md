@@ -1,7 +1,7 @@
-**Facultad de ingeniería**
-Curso: Programación Orientada a Objetos
-Caso estudio - Taller
-Diederik Antonio Montaño Burbano – T00068226
+**Facultad de ingeniería**  
+Curso: Programación Orientada a Objetos  
+Caso estudio - Taller  
+Diederik Antonio Montaño Burbano – T00068226  
 Juan Diego Pérez Navarro – T00067699
 
 # CASO EMPRESA
