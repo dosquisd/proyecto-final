@@ -1,8 +1,8 @@
 #include "empresa.h"
 
 void solicitarpositivo(int &solicitado);
-void menu_edición_datos(empresa &a);
-void menu_revisión_datos(empresa &a);
+void menu_edicion_datos(empresa &a);
+void menu_revision_datos(empresa &a);
 void menu_principal(empresa &empresa1);
 
 
@@ -84,7 +84,7 @@ void solicitarpositivo(int &solicitado){
         vigia1=1;
     } while (solicitado <= 0);
 }
-void menu_edición_datos(empresa &a){
+void menu_edicion_datos(empresa &a){
     int opcion=0;
     do{
         cout << "Bienvenido al menú de edición, desde aquí será capaz de editar los datos de su empresa" << endl;
@@ -177,7 +177,7 @@ void menu_edición_datos(empresa &a){
     } while(opcion == 0);
 }
 
-void menu_revisión_datos(empresa &a){
+void menu_revision_datos(empresa &a){
     int opcion = 0;
     fecha aux;
     do{
@@ -236,11 +236,11 @@ void menu_principal(empresa &empresa1){
         cin >> opcion;
         switch (opcion){
             case 1:
-                menu_edición_datos(empresa1);
+                menu_edicion_datos(empresa1);
                 opcion = 0;
                 break;
             case 2:
-                menu_revisión_datos(empresa1);
+                menu_revision_datos(empresa1);
                 opcion = 0;
                 break;
             case 3:
